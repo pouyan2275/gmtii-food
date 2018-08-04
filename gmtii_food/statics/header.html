@@ -1,0 +1,19 @@
+<div class="div_exit">
+        <input type="button" class="btn btn-warning" value="خروج" id="btn_exit">
+        <script>
+        $("#btn_exit").click(function(){
+            $.post("/logout")
+  location.href ='/';
+})
+</script>
+    </div>
+<div>
+    <img class="img_header" src="./pic/gmtii.png" alt="موسسه خدمات مدیریت و فناوری رشد قلم چی">
+</div>
+<div>
+    <img class="calender" src="./pic/calender.png">
+    <p id="day"></p>
+    <p id="dateDay"></p>
+    <p id="month"></p>
+    <p id="time"></p>
+</div>

@@ -1,0 +1,41 @@
+<div class="form-group">
+  <label id="food_selected"> :لیست غذا ها</label>
+  <select class="form-control" id="today_food">
+  </select>
+</div>
+    <div class="form-group mx-sm-3"> 
+        <input class="btn btn-danger" type="submit" value="ثبت" id="regFood">
+        <hr>
+        <p style="color:aliceblue">غذای انتخابی شما :<label style="color:aliceblue" id="myFood"></label><p>
+
+    </div>
+    <script>
+                $('#regFood').click(function(){
+                 $.post("/reg_food_personal",{
+                       name_food :  $('#today_food').val()
+                  }
+           ,function(data){
+                     if(data.status){
+                        swal(data.msg,"",'success')
+                             getMyFood()
+                     }else{
+                       location.href="/"
+                     }
+                 })
+               })
+               getMyFood()
+               function getMyFood(){
+               $.post("/myFood",function(data){
+                          if(data.length){
+                                          $("#myFood").html(data)
+                          }
+                  })
+                }
+                  $.post("/getFoodToday",function(data){
+                          if(data.length){
+                                  data.forEach(function(i){
+                                          $("#today_food").append('<option>'+ i['name_food'] +'</option>')
+                                  })
+                          }
+                  })
+                </script>

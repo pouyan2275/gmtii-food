@@ -1,0 +1,78 @@
+<div class="form-group">
+        <select class="form-control" id="day_food">
+          <option>شنبه</option>
+          <option>یکشنبه</option>
+          <option>دوشنبه</option>
+          <option>سه شنبه</option>
+          <option>چهارشنبه</option>
+          <option>پنجشنبه</option>
+          <option>جمعه</option>
+        </select>
+      </div>
+            <div class="form-group mx-sm-3"> 
+                    <input type="text" class="form-control" id="name_food" placeholder="نام غذا">
+                    <br>
+                    <input class="btn btn-danger" type="button" value="ثبت" id="sub_edit_food">
+            </div>
+        <hr>
+        <div id="foods">
+                
+        </div>
+        <script>
+document.getElementById('day_food').addEventListener('change', showFoods);
+  $('#sub_edit_food').click(function(){
+         $.post("/reg_new_food",{
+               name_food :  $('#name_food').val(),
+               day_food :$('#day_food').val()
+          }
+   ,function(data){
+             if(data.msg.length && data.status){
+                document.getElementById('name_food').value = "" 
+                showFoods()
+                swal(data.msg,"",'success')
+             }else if(data.msg == "ابتدا باید وارد اکانت شوید")
+             location.href="/"
+             else if(data.msg.length && !data.status)
+             swal("خطا",data.msg,'error')
+         })
+       })
+       function deleteFood(x){
+        swal({
+    title: "مطمئن هستید؟",
+    text: "غذای انتخابی شود؟",
+    type: "warning",
+    showCancelButton: true,
+    confirmButtonColor: '#DD6B55',
+    confirmButtonText: 'تایید!',
+    cancelButtonText: "لغو!",
+    closeOnConfirm: false,
+    closeOnCancel: true
+ },
+ function(isConfirm){
+
+               if(isConfirm){
+               $.post("/deleteFood",{_id:x.id},function(data){
+                       if(data.status){
+                       swal("حذف با موفقیت انجام شد","",'success')
+                showFoods()
+                       }else{swal("حذف انجام نشد","",'error')}
+
+               })
+          }
+ });
+
+       }
+       showFoods()
+       function showFoods(){
+          document.getElementById('foods').innerHTML = " "
+          $.post("/getFoods",{day_food:$('#day_food').val()},function(data){
+                  if(data.length){
+                          data.forEach(function(i){
+                                  $("#foods").append('<i onclick="deleteFood(this)" class="glyphicon-remove" id="'+i["_id"]+'"><p class="p_remove_food">'+i['name_food']+'</p></i>')
+                          })
+                  }
+          })
+       }
+
+
+        </script>

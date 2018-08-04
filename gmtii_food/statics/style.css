@@ -1,0 +1,166 @@
+@import url(./css/bootstrap-grid.css);
+@import url(./css/bootstrap-grid.min.css);
+@import url(./css/bootstrap-reboot.css);
+@import url(./css/bootstrap-reboot.min.css);
+@import url(./css/bootstrap.css);
+@import url(./css/bootstrap.min.css);
+@import url(./css/sweet-alert.css);
+@font-face {
+    font-family:IRANSans;font-style:normal;src: url('./css/fonts/Iranian_Sans.ttf');
+    font-family: glyphicon;src:url("./css/fonts/glyphicons-halflings-regular.ttf");
+}
+body{
+    background: linear-gradient(to bottom right, #820202, #040404);
+}
+.btn-danger{
+    background-color: #f50707;
+}
+#sub_edit_food{
+    width: 99%;
+}
+#reg_personal,#register{
+    margin-top: 1px;
+    width: 98.5%;
+}
+p{
+    font-family: IRANSans;
+}
+p.p_remove_food{
+    display: inherit;
+}
+#listFood{
+    margin-top: 10px;
+}
+#foods{
+    color: #fff;
+}
+#regFood,#btn_change_password{
+    width: 49%;
+    margin: 7% 27%;
+}
+.container{
+    background-color: #1f1313;
+    color: #fff;
+    border-radius: 15px;
+    text-align: center
+}
+#login_personal,#login_admin,#change_password_personal,#foods_personal,#foodPage,#sefareshat,#change_password_admin{
+    width: 49%;
+    margin-top: 5%;
+}
+#username,#password,#name_food{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+}
+#foodPage,#sefareshat,#change_password_personal,#foods_personal,#change_password_admin{
+    margin:2 2;
+}
+#foodPage,#sefareshat,#change_password_admin{
+    width: 30%;
+}
+.div_exit{
+    position: relative;
+    margin-right: 1.5%;
+    display:none;
+}
+.food_selected{
+    color:#fff
+}
+.table{
+    margin-top: 2px;
+    border-radius: 10px
+}
+.glyphicon-remove::after {
+    font-family: glyphicon;
+    color: #d9534f;
+    cursor: pointer;
+    content: "\e014";
+}
+.glyphicon-user::before{
+    font-family: glyphicon;
+    content: "\e008"
+}
+.btn{
+    border: 1px solid #000;
+}
+.loginForm,div.reg_personal{
+    background-color: #252525;
+    border-radius: 9px;
+    width: 61%;
+    height: 50%;
+    margin: 100px auto;
+    margin-bottom: 0px;
+    position: relative;
+}
+#reg_cod,#reg_name,#reg_family,#reg_password,#reg_authentication,#reg_post{
+    margin-top: 1px;
+}
+#header{
+    background: linear-gradient(to right, rgba(99, 27, 27, 0), rgba(120, 5, 5, 0.92));
+    border-radius: 0px 0px 11px 0px;
+    width: 100%;
+    height: 55px;
+}
+.img_header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    float: right;
+    max-width: 105px;
+    max-height: 105px;
+}
+.calender{
+    position: absolute;
+    top: 45px;
+    right: 100px;
+    float: left;
+    max-width: 125px;
+    max-height: 98px;
+}
+#time{
+    position: absolute;
+    color: #faf8f8;
+    float: left;
+    top: 107px;
+    font-size: 13px;
+    right: 132px;
+}
+#month{
+    position: absolute;
+    color: #faf8f8;
+    float: left;
+    top: 79px;
+    font-size: 10px;
+    right: 174px;
+}
+#dateDay{
+    position: absolute;
+    color: #faf8f8;
+    float: left;
+    top: 79px;
+    font-size: 10px;
+    right: 158px;
+}
+#day{
+    position: absolute;
+    color: #faf8f8;
+    float: left;
+    top: 79px;
+    font-size: 10px;
+    right: 124px;
+}
+#footer{
+    background-color: #111;
+    color: white;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.p_footer{
+    margin-top: 9px;
+    margin-bottom: 9px;
+    text-align: center;
+}
+

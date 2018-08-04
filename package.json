@@ -1,0 +1,19 @@
+{
+  "name": "App",
+  "version": "0.0.0",
+  "description": "description",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "latest",
+    "express": "latest",
+    "express-session": "latest",
+    "mongoose": "latest",
+    "sweetalert": "^2.1.0"
+  },
+  "author": "Pouyan",
+  "license": "ISC"
+}
